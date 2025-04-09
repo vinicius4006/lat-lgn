@@ -1,7 +1,3 @@
-Claro! Aqui está um exemplo de `README.md` explicando como usar o package `latlgn` com base no trecho de código que você enviou:
-
----
-
 # 📍 latlgn - Obtenha Latitude e Longitude a partir de um CEP
 
 Este projeto utiliza o package `latlgn` para converter informações de endereço em coordenadas geográficas (latitude e longitude).
