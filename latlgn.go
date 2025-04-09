@@ -4,13 +4,19 @@ import (
 	"context"
 	"errors"
 	"log"
-	"platform/viacep"
 	"strconv"
 
 	"github.com/alexliesenfeld/opencage"
 )
 
 const key string = "YOUR_KEY"
+
+type CEP struct {
+	Logradouro string `json:"logradouro"`
+	Bairro     string `json:"bairro"`
+	Localidade string `json:"localidade"`
+	UF         string `json:"uf"`
+}
 
 type ParamsFindCep struct {
 	From  int    `json:"from"`
@@ -23,7 +29,7 @@ type FindCep struct {
 	Params ParamsFindCep `json:"params"`
 }
 
-func LatitudeLongitudeByCEP(cep viacep.CEP) (lat, lgn string, err error) {
+func LatitudeLongitudeByCEP(cep CEP) (lat, lgn string, err error) {
 
 	query := cep.Logradouro + " " + cep.Localidade + " " + cep.UF + " " + "Brasil"
 	lat, lgn, err = callToOpenCageData(query)
